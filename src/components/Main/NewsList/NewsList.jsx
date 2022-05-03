@@ -19,7 +19,11 @@ class NewsList extends Component {
       const resp = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${apiKey}`);
       const fiveNews = await resp.data.response.docs.slice(0,5);
 
-      this.setState({ newsList: fiveNews });
+      if (this.props.data.length > 0) {
+        this.setState({newsList: [...this.props.data, ...fiveNews]})
+      } else {
+        this.setState({ newsList: fiveNews });
+      }
 
     } catch (err) {
       console.log(err);
