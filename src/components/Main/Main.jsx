@@ -6,6 +6,12 @@ import Home from "./Home/Home";
 import { Route, Routes } from "react-router-dom"; 
 
 class Main extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+       newsList: []
+    }
+  }
   render() {
     return (
     <main>
@@ -17,9 +23,9 @@ class Main extends Component {
       <Routes>
         <Route element={<Home/>} path='/home'/>
         <Route element={<Form/>} path='/form'/>
-        <Route element={<NewsList/>} path='/list'/>
+        <Route element={<NewsList data={this.state.newsList}/>} path='/list'/>
       </Routes>
-      
+
     </main>
     )
   }

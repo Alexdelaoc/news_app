@@ -20,11 +20,11 @@ class Home extends Component {
 
   render() {
     return <div>
-      <h5> Inicia sesión </h5>
-      <p>{this.context.user?`Has iniciado sesión como ${this.context.user}`:""}</p>
+      <h5> Log in </h5>
+      <p>{this.context.user?`You've logged in as ${this.context.user}`:""}</p>
       <form onSubmit={this.login}>
-        <input type="text" name="user" id="user" placeholder="Introduce tu nombre"/>
-        <input type="submit" value="Enviar" />
+        <input type="text" name="user" id="user" placeholder="Name"/>
+        <input type="submit" value="Login" />
       </form>
       
     </div>;
