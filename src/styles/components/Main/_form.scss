@@ -1,0 +1,9 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    & > div {
+        margin: 1.25vh;
+    }
+}
