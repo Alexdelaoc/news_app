@@ -7,9 +7,9 @@ class Nav extends Component {
 
   render() {
     return <nav className="nav">
-      <Link to="/home"> Home </Link>
-      <Link to="/form"> Form </Link>
-      <Link to="/list"> List </Link>
+      <Link to="/home" className="nav__element"> Home </Link>
+      <Link to="/form" className="nav__element"> Form </Link>
+      <Link to="/list" className="nav__element"> List </Link>
       
     </nav>;
   }

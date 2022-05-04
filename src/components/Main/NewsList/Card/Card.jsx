@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Card as CardNew, CardContent, CardMedia, Typography } from "@mui/material";
 import no_image from '../../../../assets/no_image.jpg';
 
 class Card extends Component {
@@ -37,11 +38,26 @@ class Card extends Component {
       : topic = news.news_desk;
 
     return (
-    <div>
+      <CardNew sx={{ width: 300, margin: 1 }}>
+        <CardMedia component="img" height="120" image={img} alt="news" />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {topic}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {abstract}
+          </Typography>
+        </CardContent>
+      </CardNew>
+
+    /* <div>
       Title: {title} Abstract: {abstract}
       <img src={img} alt="news" />
       Topic: {topic}
-    </div>
+    </div> */
     )
   }
 }

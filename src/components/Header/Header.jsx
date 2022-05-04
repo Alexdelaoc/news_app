@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Nav from "./Nav/Nav";
+import { Button } from "@mui/material";
 import { userContext } from "../../context/userContext";
 
 class Header extends Component {
@@ -7,10 +8,14 @@ class Header extends Component {
 
   render() {
     return (
-    <header>
+    <header className="header">
       <Nav />
-      {this.context.user ? <p>{this.context.user}</p>  : ""}
-      {this.context.user ? <button onClick={this.context.logout}> Logout </button>  : ""}
+      { this.context.user ?
+        <div className="header__user">
+          <p>{this.context.user}</p>
+          <Button variant="contained" color="success" onClick={this.context.logout}> Logout </Button>
+        </div>
+      : "" }
     </header>
     )
   }

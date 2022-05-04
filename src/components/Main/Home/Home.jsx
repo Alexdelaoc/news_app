@@ -19,8 +19,8 @@ class Home extends Component {
   }
 
   render() {
-    return <div>
-      <h5> Log in </h5>
+    return <div className="center">
+      <h3> Log in </h3>
       <p>{this.context.user?`You've logged in as ${this.context.user}`:""}</p>
       <form onSubmit={this.login}>
         <input type="text" name="user" id="user" placeholder="Name"/>

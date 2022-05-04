@@ -1,0 +1,9 @@
+// Estilo general del root (app)
+@import './views/app';
+
+// Estilos de los componentes
+@import './components/Header/header';
+@import './components/Header/nav';
+@import './components/Main/welcome';
+@import './components/Main/form';
+@import './components/Main/list'
