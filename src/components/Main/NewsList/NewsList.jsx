@@ -20,7 +20,7 @@ class NewsList extends Component {
       const fiveNews = await resp.data.response.docs.slice(0,5);
 
       if (this.props.data.length > 0) {
-        this.setState({newsList: [...this.props.data, ...fiveNews]})
+        this.setState({ newsList: [...this.props.data, ...fiveNews] })
       } else {
         this.setState({ newsList: fiveNews });
       }
@@ -39,8 +39,8 @@ class NewsList extends Component {
   
   render() {
     return (
-    <div>
-      <p>Aquí tienes 5 noticias</p>
+    <div className="center">
+      <h3>Here you have</h3>
       {this.renderNews()}
     </div>
     )

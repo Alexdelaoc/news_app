@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 
 class Form extends Component {
   constructor(props) {
@@ -35,17 +36,18 @@ class Form extends Component {
       return <Navigate to='/list'/>;
     }
 
-    return <form onSubmit={this.redirectOnSubmit}>
-      <label htmlFor="title">Title:</label>
-      <input type="text" name="title" id="" />
-      <label htmlFor="abstract">Abstract:</label>
-      <input type="text" name="abstract" id="" />
-      <label htmlFor="img">Photo Url:</label>
-      <input type="url" name="img" id="" />
-      <label htmlFor="topic">Topic:</label>
-      <input type="text" name="topic" id="" />
-      <input type="submit" value="Submit" />
-    </form>
+    return (
+    <div className="center">
+      <h3>Insert some film data!</h3>
+      <form onSubmit={this.redirectOnSubmit} className="form">
+        <TextField id="outlined" label="Title" variant="outlined" name="title"/>
+        <TextField id="outlined" label="Abstract" variant="outlined" name="abstract"/>
+        <TextField id="outlined" label="Image URL" variant="outlined" name="img"/>
+        <TextField id="outlined" label="Topic" variant="outlined" name="topic"/>
+        <Button variant="outlined" type="submit">Submit</Button>
+      </form>
+    </div>
+    )
   }
 }
 
